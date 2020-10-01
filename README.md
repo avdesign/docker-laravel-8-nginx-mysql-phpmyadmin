@@ -9,20 +9,29 @@
 
 # Demo - Docker/Laravel/Nginx/Mysql/Phpmyadmin
 
-Este é um app de demonstração do Laravel criado para servir como base de projetos.
+Este é um app de demonstração do Laravel, criado para servir como base de projetos.
 
 Depois de instalar o **docker** e o **docker-compose**, você pode colocar este ambiente em funcionamento com:
 
-Clone o Repositório e renomei o diretório `laravel_app` para `laravel_app`
+Clone o Repositório e renomeie o diretório `docker-laravel-8-nginx-mysql-phpmyadmin` para `laravel_app` ou um nome de sua escolha.
 ````
-$ git clone 
+$ git clone https://github.com/avdesign/docker-laravel-8-nginx-mysql-phpmyadmin.git
+
+$ mv docker-laravel-8-nginx-mysql-phpmyadmin laravel_app
+````
+Copie o arquivo `.env.example` para o arquivo `.env` para personalizar a configuração do ambiente.
+````
+$ cp .env.example .env
+````
+Usaremos os comandos do docker-compose para compilar a imagem do app e executar os serviços que especificamos em nossa configuração do `docker-compose.yml`
+````
+$ docker-compose build app
 ````
 
-```
 $ sudo chmod -R 777 .docker/dbdata/*
 $ docker-compose exec app composer install
 $ docker-compose exec app php artisan key:generate
-$ docker-compose build app
+
 $ docker-compose up -d
 ```
 
