@@ -49,7 +49,7 @@ $ cd laravel_app
  ````
  $ nano .env
  ````
- vamos chamar nosso serviço de banco de dados de `db`. Substitua o valor do **DB_HOST ** pelo nome do serviço de banco de dados:
+ vamos chamar nosso serviço de banco de dados de `db`. Substitua o valor do **DB_HOST** pelo nome do serviço de banco de dados:
  ````
 |---------------------------
     DB_CONNECTION=mysql
@@ -58,7 +58,7 @@ $ cd laravel_app
     DB_DATABASE=laravel_app
     DB_USERNAME=laravel_user
     DB_PASSWORD=secret
-|---------------------------
+----------------------------|
  ````
  ### Configurando o Dockerfile
  Crie um novo arquivo `Dockerfile` usando o `nano` ou um editor de texto de sua escolha: 
