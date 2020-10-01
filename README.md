@@ -44,7 +44,7 @@ Teste a conexão com o MySQL executando o comando:
 $ docker-compose exec app php artisan migrate
 ````
 ### Nota 
-O volume nomeado `dbdata` mantém o conteúdo da pasta `/var/lib/mysql` dentro do contêiner. Isso permite que você pare e reinicie os serviços sem perder dados no `bd`.
+O volume nomeado `dbdata` mantém o conteúdo da pasta `/var/lib/mysql` dentro do contêiner. Isso permite que você pare e reinicie os serviços sem perder os dados do banco de dados.
 
 
 # Tutorial desta demo:
@@ -270,7 +270,7 @@ volumes:
   dbdata:
     driver: local
 ````
-### Comandos Bsicos
+### Comandos Básicos
 Permissão para o diretório `dbdata`
 ````
 $ sudo chmod -R 775 .docker/dbdata/*
