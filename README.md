@@ -27,17 +27,29 @@ Usaremos os comandos do docker-compose para compilar a imagem do app e executar 
 ````
 $ docker-compose build app
 ````
-
-$ sudo chmod -R 777 .docker/dbdata/*
-$ docker-compose exec app composer install
-$ docker-compose exec app php artisan key:generate
-
+Quando a compilação terminar, execute o ambiente em modo de segundo plano com:
+````
 $ docker-compose up -d
-```
+````
+Agora, seu ambiente está funcionando! Porém, ainda precisaremos executar alguns comandos para concluir a configuração do app.
+````
+$ docker-compose exec app composer install
+````
+Antes de testar, gerar uma chave única para o app com:
+````
+$ docker-compose exec app php artisan key:generate
+````
+Teste a conexão com o MySQL executando o comando:
+````
+$ docker-compose exec app php artisan migrate
+````
+### Nota 
+O volume nomeado `dbdata` mantém o conteúdo da pasta `/var/lib/mysql` dentro do contêiner. Isso permite que você pare e reinicie os serviços sem perder dados no `bd`.
 
-# Tutoriais desta demo:
 
-### Etapa 1 - instalação do Laravel
+# Tutorial desta demo:
+
+### Instalação do Laravel 
 Escolhendo uma versão:
 ````
 $ cd ~
