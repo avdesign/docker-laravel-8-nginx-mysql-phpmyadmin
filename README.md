@@ -143,7 +143,7 @@ Crie um novo arquivo app.cnf:
 ````
 $ nano .docker/mysql/app.cnf
 ````
-### Configurando do PHP
+### Configurando o serviço do PHP
 Crie o diretório `php`
 ````
 $ mkdir php
@@ -247,11 +247,11 @@ volumes:
   dbdata:
     driver: local
 ````
-### Comandos Basicos
+### Comandos Básicos
 Permissão para o diretório `dbdata`
 ````
 $ sudo chmod -R 775 .docker/dbdata/*
-```
+````
 Para exibir informações detalhadas sobre os arquivos no diretório do app:
 ````
 $ docker-compose exec app ls -l
