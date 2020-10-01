@@ -7,7 +7,7 @@
 <a href="#"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
-# Docker Demo App - Laravel / Nginx / Mysql / Sql 
+# Demo - Docker/Laravel/Nginx/Mysql/Phpmyadmin
 
 Este é um aplicativo de demonstração do Laravel criado para servir como base de projetos.
 
@@ -247,7 +247,7 @@ volumes:
   dbdata:
     driver: local
 ````
-### Comandos Básicos
+### Comandos Bsicos
 Permissão para o diretório `dbdata`
 ````
 $ sudo chmod -R 775 .docker/dbdata/*
