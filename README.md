@@ -9,13 +9,14 @@
 
 # Demo - Docker/Laravel/Nginx/Mysql/Phpmyadmin
 
-Este é um aplicativo de demonstração do Laravel criado para servir como base de projetos.
-
-The branch `tutorial-02` covers containerizing the application to run it with Docker containers.
+Este é um app de demonstração do Laravel criado para servir como base de projetos.
 
 Depois de instalar o **docker** e o **docker-compose**, você pode colocar este ambiente em funcionamento com:
 
-Clone o Repositório, e navegue até o diretório `laravel_app`
+Clone o Repositório e renomei o diretório `laravel_app` para `laravel_app`
+````
+$ git clone 
+````
 
 ```
 $ sudo chmod -R 777 .docker/dbdata/*
@@ -185,7 +186,7 @@ services:
       - ./:/var/www
       - .docker/php/local.ini:/usr/local/etc/php/conf.d/local.ini
     networks:
-      - app_network  
+      - network  
 
   #MySQL Service
   db:
@@ -205,7 +206,8 @@ services:
       - .docker/dbdata:/var/lib/mysql/
       - .docker/mysql/app.cnf:/etc/mysql/my.cnf
     networks:
-      - app_network
+      - network   
+
 
   #Nginx Service
   nginx:
@@ -218,7 +220,7 @@ services:
       - ./:/var/www
       - .docker/nginx:/etc/nginx/conf.d
     networks:
-      - app_network
+      - network
 
   #Phpmyadmin
   pma:
@@ -235,11 +237,11 @@ services:
     ports:
       - "8080:80"
     networks:
-      - app_network
-
+      - network
+      
 #Docker Networks
 networks:
-  app_network:
+  network:
     driver: bridge
 
 #Volumes

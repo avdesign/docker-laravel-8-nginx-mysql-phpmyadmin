@@ -16,7 +16,7 @@ services:
       - ./:/var/www
       - .docker/php/local.ini:/usr/local/etc/php/conf.d/local.ini
     networks:
-      - app_network  
+      - network  
 
   #MySQL Service
   db:
@@ -36,7 +36,7 @@ services:
       - .docker/dbdata:/var/lib/mysql/
       - .docker/mysql/app.cnf:/etc/mysql/my.cnf
     networks:
-      - app_network   
+      - network   
 
 
   #Nginx Service
@@ -50,7 +50,7 @@ services:
       - ./:/var/www
       - .docker/nginx:/etc/nginx/conf.d
     networks:
-      - app_network
+      - network
 
   #Phpmyadmin
   pma:
@@ -67,13 +67,11 @@ services:
     ports:
       - "8080:80"
     networks:
-      - app_network
-
-
-
+      - network
+      
 #Docker Networks
 networks:
-  app_network:
+  network:
     driver: bridge
 
 #Volumes
