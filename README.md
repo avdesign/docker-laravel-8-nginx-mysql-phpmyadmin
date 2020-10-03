@@ -41,8 +41,10 @@ $ docker-compose exec app php artisan key:generate
 ````
 Teste a conexão com o MySQL executando o comando:
 ````
-$ docker-compose exec app php artisan migrate
+$ docker-compose exec app php artisan migrate --seed
 ````
+
+
 ### Nota 
 O volume nomeado `dbdata` mantém o conteúdo da pasta `/var/lib/mysql` dentro do contêiner. Isso permite que você pare e reinicie os serviços sem perder os dados do banco de dados.
 
